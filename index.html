@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CV Stanley</title>
+    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascripr" src="js/bootstrap.min.js"></script>
+    <style>
+    .img-thumbnail{
+        border: 1px solid grey;
+        background: grey
+    }
+    .pick{
+        background-color: grey;
+    }
+    body{
+        font-family: 'PT Serif', serif;
+        margin: 0;
+    }
+    ol {
+        padding: 1;
+    }
+    nav {
+        position: fixed;
+        left: 0;
+        width: 30rem;
+        height: 100%;
+        background-color: darkgray;
+        text-align: center;
+    }
+    nav ul{
+        padding: 0;
+        list-style-type: none;
+
+    }
+    #user{
+        border-radius: 50%;
+        width: 200px;
+    }
+    .icon{
+        border-radius: 50%;
+        width: 50px;
+        padding-left: 10px;
+    }
+    div div{
+        padding-top: 1rem;
+        margin-left: 32rem;
+        font-size: 20px;
+    }
+    div .isi{
+        height: 80rem;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <p><img src="padoru kurze2.jpg"  id="user" class='img-thumbnail'></p>
+        <ul>
+            <li id="Top">Top</li>
+            <li id="Biodata">Biodata</li>
+            <li id="pendidikan">Pendidikan</li>
+            <li id="Pengalaman">Pengalaman Kerja</li>
+        </ul>
+    </nav>
+    <div id="content">
+        <div id="header" class="isi">
+        <h1>Stanley Purwahariyanto</h1>
+        <hr>
+        <p> <a href="https://Facebook.com"><img src="facebook.png" class="icon" id="facebook"></a> <a href="https://tumblr.com"><img src="Tumblr_Icon.png" class="icon" id="tumblr"></a> <a href="https://discord.com"><img src="Discord_icon.svg" class="icon" id="discord"></a></p>            
+        </div>
+        <div id="contentBiodata" class="isi">
+                <h1>Biodata</h1>
+                <p>Nama: Stanley Purwahariyanto</p>
+                <p>Tanggal Lahir: 17 Mei 1995</p>
+                <p>Jenis Kelamin: Pria</p>
+                <p>Alamat: Taman Modern Blok A6 no.8</p>
+        </div>
+        <div id="contentPendidikan" class="isi">
+                <h1>Pendidikan</h1>
+                <p>SMP: Harapan Bunda</p>
+                <p>SMK: Dharma Paramitha</p>
+                <p>Kuliah: Purwadhika IT Entrepreneur School</p>
+        </div>
+        <div id="contentPengalaman" class="isi">
+                <h1>Pengalaman Kerja</h1>
+                <ol>
+                    <li>Purchasing di Hotel Horizon selama 3 tahun</li>
+                    <li>Game Developer & Art Design di Stdio95 selama 3 tahun</li>
+                </ol>
+        </div>
+        
+    </div>
+    <script>
+    
+    $(document).ready(function(){
+        $('ul li').wrapAll('<h2>');
+//----------------------------------------------
+        $('#Top').click(function(){
+            $('html, body').animate({
+        scrollTop: $("#header").offset().top
+    }, 1000);
+        });
+
+        $('#Biodata').click(function(){
+            $('html, body').animate({
+        scrollTop: $("#contentBiodata").offset().top
+    }, 1000);
+        });
+
+        $('#pendidikan').click(function(){
+            $('html, body').animate({
+        scrollTop: $("#contentPendidikan").offset().top
+    }, 1000);
+        })
+
+        $('#Pengalaman').click(function(){
+            $('html, body').animate({
+        scrollTop: $("#contentPengalaman").offset().top
+    }, 1000);
+        })
+//------------------------------------------------
+        $('.icon').hover(function(){
+            $(this).fadeTo("slow",0.5);   
+                            },
+            function(){
+            $(this).fadeTo("slow",1);
+        })
+
+        $('nav ul li').hover(function(){
+            $(this).toggleClass('pick')
+            
+        })
+//------------------------------------------------
+    })//end of ze code
+
+        
+    
+    
+    </script>
+</body>
+</html>
